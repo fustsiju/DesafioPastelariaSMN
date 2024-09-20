@@ -1,0 +1,49 @@
+﻿@page
+@model DesafioPastelariaSMN.Pages.CadastroModel
+@{
+    ViewData["Title"] = "Cadastro";
+}
+
+<div class="container cadastro">
+    <form class="container d-grid justify-content-center row">
+        <div class="col col-md-15">
+            <label for="nome" class="form-label">Nome completo</label>
+            <input asp-for="Usuario.nome" type="text" class="form-control" id="nome" value="Nome" required>
+        </div>
+        <div class="col col-md-15">
+            <label for="nasec" class="form-label">Data de nascimento</label>
+            <input asp-for="Usuario.nasec "type="date" class="form-control" id="nasec" value="Nascimento" required>
+        </div>
+        <div class="col-md-15">
+            <label for="email" class="form-label">Email</label>
+            <div class="input-group">
+                <span class="input-group-text" id="inputGroupPrepend2"></span>
+                <input asp-for="Usuario.email" type="text" class="form-control" id="email" aria-describedby="inputGroupPrepend2" required>
+            </div>
+        </div>
+        <div class="col-md-15">
+            <label for="rua" class="form-label">Endereço</label>
+            <input asp-for="Usuario.rua" type="text" class="form-control" id="rua" required>
+        </div>
+        <div class="col-md-5">
+            <label for="num" class="form-label">Numero</label>
+            <input asp-for="Usuario.numero" type="text" class="form-control" id="num" aria-describedby="inputGroupPrepend2" required />
+        </div>
+        <div class="col-md-15">
+            <label for="validationDefault05" class="form-label">Telefone</label>
+            <input asp-for="Usuario.telefone" type="text" class="form-control" id="telefone" required>
+        </div>
+        <div class="col-md-15">
+            <label for="validationDefault05" class="form-label">Celular</label>
+            <input asp-for="Usuario.celular" type="text" class="form-control" id="telefone" required>
+        </div>
+
+        <div class="col-12 mt-5">
+            <button class="btn btn-primary" type="submit">Cadastrar</button>
+        </div>
+    </form>
+    @if (!string.IsNullOrEmpty(Model.Message))
+    {
+        <div class="alert alert-danger">@Model.Message</div>
+    }
+</div>

@@ -1,0 +1,39 @@
+﻿@page
+@model DesafioPastelariaSMN.Pages.IndexModel
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="bg-imagem">
+    <img class="bg-imagem" src="https://th.bing.com/th/id/R.0d5294d41e20356edf6999ff39a93e1a?rik=HTfJC2fg82OC0Q&riu=http%3a%2f%2fcuritibacult.com.br%2fwp-content%2fuploads%2f2018%2f02%2fPasteis.jpg&ehk=BEnuYbpCs2UdXWQhBgUfZuUPABSOeGKE70OC8plRHc4%3d&risl=&pid=ImgRaw&r=0" alt="back-imagem" id="back-imagem" />
+</div>
+
+<div class="container">
+    <div class="container login bg-white">
+        <form method="post" id="formularioLogin">
+            <h1 class="mb-2 pt-2">Login</h1>
+            <div class="mb-4 row">
+                <label for="staticEmail" class="col-sm-3 col-form-label"></label>
+                <div class="col-sm-12">
+                    <input asp-for="Usuario.email" type="text" class="form-control" id="staticEmail" placeholder="Email">
+                    <span asp-validation-for="Usuario.email" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="mb-4 row">
+                <label for="inputPassword" class="col-sm-3 col-form-label"></label>
+                <div class="col-sm-12">
+                    <input asp-for="Usuario.senha" type="password" class="form-control" id="inputPassword" placeholder="Senha">
+                    <span asp-validation-for="Usuario.senha" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="justify-content-lg-center mt-5" id="botao">
+                <button type="submit" class="btn btn-primary mb-3">Confirmar</button>
+            </div>
+        </form>
+
+        @if (!string.IsNullOrEmpty(Model.Message))
+        {
+            <div class="alert alert-danger">@Model.Message</div>
+        }
+    </div>
+</div>

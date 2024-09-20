@@ -1,0 +1,29 @@
+﻿@page
+@model DesafioPastelariaSMN.Pages.GerenciaModel
+@{
+    ViewData["Title"] = "Gerenciamento";
+}
+
+<div class="container tarefa">
+    <div class="container">
+        <div class="mb-3">
+            <label for="emailFunc" class="form-label fs-5 mt-2">Email Funcionário</label>
+            <input type="email" class="form-control" id="areaEmailFunc" placeholder="nome@gmail.com">
+        </div>
+        <div class="mb-3">
+            <label for="titulo" class="form-label fs-5">Título</label>
+            <input type="text" class="form-control" id="areaTitulo" placeholder="Titúlo">
+        </div>
+        <div class="mb-3">
+            <label for="areaTexto" class="form-label fs-5">Tarefa</label>
+            <textarea class="form-control " id="areaTexto" placeholder="Digite a tarefa aqui" rows="3"></textarea>
+        </div>
+        <div class="col-md-4">
+            <label for="prazo" class="form-label fs-5">Prazo</label>
+            <input type="date" class="form-control" id="nasec" value="Prazo" required>
+        </div>
+        <div class="mt-5">
+            <button type="submit" class="btn btn-primary mb-3">Confirmar</button>
+        </div>
+    </div>
+</div>

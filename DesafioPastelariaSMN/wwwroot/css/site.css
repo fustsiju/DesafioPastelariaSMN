@@ -1,0 +1,109 @@
+html {
+    font-size: 14px;
+}
+
+body{
+    background: grey;
+}
+
+.bg-imagem {
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    object-fit: cover;
+}
+
+    .bg-imagem img {
+        transition: filter 0.3s ease;
+    }
+
+        .bg-imagem img.blur {
+            filter: blur(3px);
+        }
+
+
+.login {
+    position: relative;
+    top: 15em;
+    max-width: 20em;
+    max-height: 30em;
+    min-height: 20em;
+    min-width: 5em;
+    text-align: center;
+    align-content: center;
+    border-radius: 10px;
+    border: 1px solid black;
+    transition: filter 0.3s ease;
+    filter: drop-shadow(2px 4px 6px black);
+}
+
+
+
+.form {
+    position: relative;
+    top: 50%;
+}
+
+textarea {
+    resize: none;
+}
+
+.cadastro {
+    position: relative;
+    top: 3em;
+    max-width: 30em;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid black;
+    transition: filter 0.3s ease;
+    filter: drop-shadow(2px 4px 6px black);
+    background: gainsboro;
+
+}
+
+.tarefa {
+    position: relative;
+    top: 5em;
+    max-width: 30em;
+    border-radius: 10px;
+    border: 1px solid black;
+    background: gainsboro;
+    
+}
+.container#botao {
+    text-align: center;
+}
+.shadow-nav {
+    filter: drop-shadow(1px 2px 3px black);
+}
+.shadow-footer {
+    filter: drop-shadow(0 -3px 2px black);
+}
+.bg-colorger {
+    background: #f8f9fa;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+.nav-link::after {
+    filter: drop-shadow(2px 4px 6px black);
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
