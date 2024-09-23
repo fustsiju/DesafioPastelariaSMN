@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS `tarefas` (
   `estado` varchar(30) DEFAULT NULL,
   `prazo` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=73 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- Copiando dados para a tabela desafio.tarefas: ~0 rows (aproximadamente)
 
@@ -47,7 +47,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `foto` longblob NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `UC_Email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=90 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- Copiando dados para a tabela desafio.usuario: ~1 rows (aproximadamente)
 INSERT INTO `usuario` (`id`, `nome`, `nasec`, `telefone`, `celular`, `email`, `senha`, `rua`, `num`, `tipo`, `foto`) VALUES
