@@ -1,7 +1,6 @@
 # Projeto SMN - Pastelaria
 
-
-Passo 1 - Importar o banco desafio.sql no MySQL.
+Passo 1 - Importar o banco desafio.sql no MySQL com UTF-8.
 
 Passo 2 - Colocar a senha do seu banco na string connectionString em Tarefas.cshtml.cs, Funcionário.cshtml.cs e DBConexao.cs.
 
