@@ -1,6 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MySql.Data.MySqlClient;
+using System.Net.Mail;
+using System.Net;
 using System.Runtime.Serialization;
+using NuGet.Protocol.Plugins;
 
 namespace DesafioPastelariaSMN
 {
@@ -8,11 +11,17 @@ namespace DesafioPastelariaSMN
     {
         DateTimeFormat prazo = new DateTimeFormat("YYYY-MM-DD");
 
-        private string connectionString = "Server=localhost;Database=desafio;User ID=root;Password=201023;";
+        
+
+        public string con()
+        {
+            string connectionString = "Server=localhost;Database=desafio;User ID=root;Password=SenhaDoSeuBanco;";
+            return connectionString;
+        }
 
         public MySqlConnection Connect()
         {
-            MySqlConnection connection = new MySqlConnection(connectionString);
+            MySqlConnection connection = new MySqlConnection(con());
             connection.Open();
             return connection;
         }
@@ -37,46 +46,5 @@ namespace DesafioPastelariaSMN
             }
 
         }
-
-        public void addUsuario(string nome, DateTime nasec, int telefone, int celular, string email, string senha, string rua, int num, bool tipo)
-        {
-            using (var connection = Connect())
-            {
-
-                string query = "INSERT INTO usuario (nome, nasec, telefone, celular, email, senha, rua, num, imagem, tipo) VALUES (@nome, @nasec, @tel, @cel, @email, @senha@, @rua, @num, @img, @tipo);";
-                MySqlCommand cmd = new MySqlCommand(query, connection);
-                cmd.Parameters.AddWithValue("@nome", nome);
-                cmd.Parameters.AddWithValue("@nasec", nasec);
-                cmd.Parameters.AddWithValue("@tel", telefone);
-                cmd.Parameters.AddWithValue("@cel", celular);
-                cmd.Parameters.AddWithValue("@email", email);
-                cmd.Parameters.AddWithValue("@senha", senha);
-                cmd.Parameters.AddWithValue("@rua", rua);
-                cmd.Parameters.AddWithValue("@num,", num);
-                cmd.Parameters.AddWithValue("@tipo,", tipo);
-
-                cmd.ExecuteNonQuery();
-            }
-        }
-        public void mandarTarefas(string msg,  int func,  int estado, DateTimeFormat prazo)
-        {
-            string query = "INSERT INTO tarefas (mensagem, funcResp, estado, prazo) VALUES (@msg, @func, @estado, @prazo)";
-            MySqlCommand cmdMandarTarefas = new MySqlCommand(query, Connect());
-            cmdMandarTarefas.Parameters.AddWithValue("@msg",  msg);
-            cmdMandarTarefas.Parameters.AddWithValue("@func", func);
-            cmdMandarTarefas.Parameters.AddWithValue("@estado", estado);
-            cmdMandarTarefas.Parameters.AddWithValue("@prazo", prazo);
-
-            cmdMandarTarefas.ExecuteNonQuery();
-        }
-
-        public void verTarefas()
-        {
-
-            string query = "SELECT mensagem, prazo, estado FROM tarefas WHERE id = @id";
-
-        }
-
-
     }
 }

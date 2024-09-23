@@ -20,6 +20,7 @@ builder.Services.AddAuthentication("CookieAuth")
         config.LoginPath = "/Index";
     });
 
+
 // Add services to the container.
 builder.Services.AddRazorPages();
 
@@ -43,3 +44,4 @@ app.UseAuthorization();
 app.MapRazorPages();
 
 app.Run();
+

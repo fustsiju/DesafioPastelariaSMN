@@ -15,19 +15,22 @@
             <div class="mb-4 row">
                 <label for="staticEmail" class="col-sm-3 col-form-label"></label>
                 <div class="col-sm-12">
-                    <input asp-for="Usuario.email" type="text" class="form-control" id="staticEmail" placeholder="Email">
-                    <span asp-validation-for="Usuario.email" class="text-danger"></span>
+                    <input asp-for="Usuario.emailUser" type="text" class="form-control" id="staticEmail" placeholder="Email">
+                    <span asp-validation-for="Usuario.emailUser" class="text-danger"></span>
                 </div>
             </div>
+
             <div class="mb-4 row">
                 <label for="inputPassword" class="col-sm-3 col-form-label"></label>
                 <div class="col-sm-12">
-                    <input asp-for="Usuario.senha" type="password" class="form-control" id="inputPassword" placeholder="Senha">
-                    <span asp-validation-for="Usuario.senha" class="text-danger"></span>
+                    <input asp-for="Usuario.senhaUser" type="password" class="form-control" id="inputPassword" placeholder="Senha">
+                    <span asp-validation-for="Usuario.senhaUser" class="text-danger"></span>
                 </div>
             </div>
-            <div class="justify-content-lg-center mt-5" id="botao">
-                <button type="submit" class="btn btn-primary mb-3">Confirmar</button>
+            <div class="d-flex justify-content-center">
+                <div class="mt-2" id="botao">
+                    <button type="submit" class="btn btn-primary mb-3">Confirmar</button>
+                </div>
             </div>
         </form>
 

@@ -3,3 +3,50 @@
 @{
     ViewData["Title"] = "Funcionario";
 }
+
+<div class="container mt-5 tarefaFunc p-3">
+    <div class="container">
+        <h2>Minhas Tarefas</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Título</th>
+                    <th>Descrição</th>
+                    <th>Prazo</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @if (Model.TarefasFuncionario != null && Model.TarefasFuncionario.Count > 0)
+                {
+                    foreach (var tarefa in Model.TarefasFuncionario)
+                    {
+                        <form method="post">
+                        <tr class="border border-secondary">
+                            <td>@tarefa.meuTitulo</td>
+                            <td class="tarefaMSG">@tarefa.msgTarefa</td>
+                            <td>@tarefa.prazoTarefa.ToString("dd/MM/yyyy")</td>
+                            <td>@tarefa.estadoTarefa
+                            <input type="hidden" name="tarefaId" value="@tarefa.idTarefa" />
+                            <div class="d-inline-flex justify-content-center">
+                                    <div class="d-flex btopc">
+                                        <button type="submit" name="action" value="Concluir" class="btn btn-success mb-3"></button>
+                                    </div>
+                            </div>
+                            </td>
+                        </tr>
+
+                        </form>
+                    }
+                }
+            </tbody>
+
+        </table>
+
+            <div class="alert alert-info">
+                @Model.Message
+            </div>
+        
+    </div>
+</div>

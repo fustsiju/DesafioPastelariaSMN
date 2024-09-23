@@ -10,4 +10,3 @@ document.getElementById('formularioLogin').addEventListener('focusin', function 
 document.getElementById('formularioLogin').addEventListener('focusout', function () {
     document.getElementById('back-imagem').classList.remove('blur');
 });
-

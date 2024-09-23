@@ -4,14 +4,56 @@
     ViewData["Title"] = "Visualizar";
 }
 
-<input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" checked>
-<label class="btn btn-secondary" for="option1">Checked</label>
+<div class="container mt-5 tarefaVis p-3">
+    <div class="container">
+        <h2>Tarefas Funcionários</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Funcionário</th>
+                    <th>Título</th>
+                    <th>Descrição</th>
+                    <th>Prazo</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <form method="post" class="tarefa">
+                    @if (Model.TarefasFuncionarioAll != null && Model.TarefasFuncionarioAll.Count > 0)
+                    {
+                        foreach (var tarefa in Model.TarefasFuncionarioAll)
+                        {
+                        <tr class="border border-secondary pe-5">
 
-<input type="radio" class="btn-check" name="options" id="option2" autocomplete="off">
-<label class="btn btn-secondary" for="option2">Radio</label>
+                            <td>@tarefa.funcResp</td>
+                            <td>@tarefa.meuTitulo</td>
+                            <td class="tarefaMSG">@tarefa.msgTarefa</td>
+                            <td>@tarefa.prazoTarefa.ToString("dd/MM/yyyy")</td>
+                            <td>
+                                    @tarefa.estadoTarefa
+                                <input type="hidden" name="tarefaId" value="@tarefa.idTarefa" />
+                                <div class="d-inline-flex justify-content-center">
+                                    <div class="d-flex btopc">
+                                        <button type="submit" name="action" value="Concluir" class="btn btn-success mb-3"></button>
+                                    </div>
+                                    <div class="d-flex btopc">
+                                        <button type="submit" name="action" value="Excluir" class="btn btn-danger mb-3"></button>
+                                    </div>
 
-<input type="radio" class="btn-check" name="options" id="option3" autocomplete="off" disabled>
-<label class="btn btn-secondary" for="option3">Disabled</label>
+                                </div>
+                            </td>
 
-<input type="radio" class="btn-check" name="options" id="option4" autocomplete="off">
-<label class="btn btn-secondary" for="option4">Radio</label>
+                        </tr>
+
+                        }
+                    }
+
+                </form>
+
+            </tbody>
+        </table>
+        <div class="alert alert-info">
+            @Model.Message
+        </div>
+    </div>
+</div>

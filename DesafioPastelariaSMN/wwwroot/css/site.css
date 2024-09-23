@@ -2,7 +2,7 @@ html {
     font-size: 14px;
 }
 
-body{
+body {
     background: grey;
 }
 
@@ -40,7 +40,9 @@ body{
     filter: drop-shadow(2px 4px 6px black);
 }
 
-
+.max {
+    max-inline-size: 4em;
+}
 
 .form {
     position: relative;
@@ -54,14 +56,12 @@ textarea {
 .cadastro {
     position: relative;
     top: 3em;
-    max-width: 30em;
     padding: 20px;
     border-radius: 10px;
     border: 1px solid black;
     transition: filter 0.3s ease;
     filter: drop-shadow(2px 4px 6px black);
     background: gainsboro;
-
 }
 
 .tarefa {
@@ -71,19 +71,70 @@ textarea {
     border-radius: 10px;
     border: 1px solid black;
     background: gainsboro;
-    
 }
+.tarefaMSG{
+    max-width:2em;
+    word-break:break-all;
+}
+.tarefaVis {
+    position: relative;
+    top: 5em;
+    padding: 10px;
+    min-width: 30em;
+    max-width: 50em;
+    border-radius: 10px;
+    border: 1px solid black;
+    background: gainsboro;
+}
+
+.btopc {
+    padding-right: 1.5em;
+}
+
+.trfborder {
+    border: 1px solid black;
+}
+
+
+.selecionado {
+    background-color: cadetblue;
+}
+
+tr #estado {
+    background: yellow;
+    border: 1px solid black;
+}
+
+    tr #estado:checked {
+        background: green;
+    }
+
+    tr #estado:hover {
+        background: grey;
+        cursor: pointer;
+    }
+
 .container#botao {
     text-align: center;
 }
+
 .shadow-nav {
     filter: drop-shadow(1px 2px 3px black);
 }
+
 .shadow-footer {
     filter: drop-shadow(0 -3px 2px black);
 }
+
 .bg-colorger {
     background: #f8f9fa;
+}
+
+.tarefaFunc {
+    max-width: 40em;
+    border-radius: 10px;
+    border: 1px solid black;
+    background: gainsboro;
 }
 
 @media (min-width: 768px) {
@@ -91,6 +142,7 @@ textarea {
         font-size: 16px;
     }
 }
+
 .nav-link::after {
     filter: drop-shadow(2px 4px 6px black);
 }
@@ -103,7 +155,6 @@ html {
     position: relative;
     min-height: 100%;
 }
-
-body {
-    margin-bottom: 60px;
+body{
+    margin-bottom:200px;
 }

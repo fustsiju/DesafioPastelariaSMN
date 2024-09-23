@@ -6,24 +6,54 @@
 
 <div class="container tarefa">
     <div class="container">
-        <div class="mb-3">
-            <label for="emailFunc" class="form-label fs-5 mt-2">Email Funcionário</label>
-            <input type="email" class="form-control" id="areaEmailFunc" placeholder="nome@gmail.com">
-        </div>
-        <div class="mb-3">
-            <label for="titulo" class="form-label fs-5">Título</label>
-            <input type="text" class="form-control" id="areaTitulo" placeholder="Titúlo">
-        </div>
-        <div class="mb-3">
-            <label for="areaTexto" class="form-label fs-5">Tarefa</label>
-            <textarea class="form-control " id="areaTexto" placeholder="Digite a tarefa aqui" rows="3"></textarea>
-        </div>
-        <div class="col-md-4">
-            <label for="prazo" class="form-label fs-5">Prazo</label>
-            <input type="date" class="form-control" id="nasec" value="Prazo" required>
-        </div>
-        <div class="mt-5">
-            <button type="submit" class="btn btn-primary mb-3">Confirmar</button>
-        </div>
+        <form method="post" id="formularioTarefa">
+            <div class="mb-3">
+                <label for="funcResp" class="form-label fs-5 mt-2">Email Funcionário</label>
+                <input asp-for="TarefasFunc.funcResp" type="email" class="form-control" id="staticEmail" placeholder="nome@gmai.com">
+                <span asp-validation-for="TarefasFunc.funcResp" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label for="titulo" class="form-label fs-5">Título</label>
+                <input asp-for="TarefasFunc.meuTitulo" type="text" class="form-control" id="areaTItulo" placeholder="Titulo da tarefa">
+                <span asp-validation-for="TarefasFunc.meuTitulo" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label for="areaTexto" class="form-label fs-5">Tarefa</label>
+                <textarea class="form-control " id="areaTexto" placeholder="Digite a tarefa aqui" rows="3" asp-for="TarefasFunc.msgTarefa"></textarea>
+                <span asp-validation-for="TarefasFunc.msgTarefa" class="text-danger"></span>
+            </div>
+            <div class="col-md-4">
+                <label for="prazo" class="form-label fs-5">Prazo</label>
+                <input asp-for="TarefasFunc.prazoTarefa" type="date" class="form-control" id="nasec" value="Prazo" required>
+                <span asp-validation-for="TarefasFunc.prazoTarefa" class="text-danger"></span>
+            </div>
+            <div class="d-flex justify-content-center">
+                <div class="mt-5">
+                    <button id="sub" type="submit" class="btn btn-primary mb-3"> Confirmar</button>
+                </div>
+            </div>
+
+        </form>
+
+
+        @if (string.IsNullOrEmpty(Model.Message))
+        {
+            <div class="alert alert-danger">
+                <a>Atenção: Preencher todos os campos!</a>
+                @Model.Message
+            </div>
+        }
+        else if (!string.IsNullOrEmpty(Model.Message) && Model.MessageType == true)
+        {
+            <div class="alert alert-success">
+                @Model.Message
+            </div>
+        }
+        else
+        {
+            <div class="alert alert-warning">
+                @Model.Message
+            </div>
+        }
     </div>
 </div>
