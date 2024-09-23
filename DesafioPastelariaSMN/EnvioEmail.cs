@@ -7,13 +7,13 @@ namespace emailTest
     {
         static void Main(string[] args)
         {
-            string fromMail = "fulviost@gmail.com";
-            string fromPassword = "cfko uvvx edbn obzh";
+            string fromMail = "email@gmail.com";
+            string fromPassword = "SenhaSMTP";
             MailMessage message = new MailMessage();
             message.From = new MailAddress(fromMail);
             message.Subject = "Teste de aplicação";
             message.To.Add(new MailAddress("oportunidades@smn.com.br"));
-            message.Body = @$"O funcionário {}";
+            message.Body = @"Mensagem ao funcionario";
 
 
             var smtpClient = new SmtpClient("smtp.gmail.com")

@@ -11,8 +11,6 @@ namespace DesafioPastelariaSMN
     {
         DateTimeFormat prazo = new DateTimeFormat("YYYY-MM-DD");
 
-        
-
         public string con()
         {
             string connectionString = "Server=localhost;Database=desafio;User ID=root;Password=SenhaDoSeuBanco;";
